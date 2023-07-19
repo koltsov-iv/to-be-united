@@ -1,0 +1,40 @@
+<nav class="bg-gray-800">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 items-center justify-between">
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-shrink-0 items-center">
+          <img class="block h-8 w-auto lg:hidden" src="assets/logo.png" alt="To be united">
+          <img class="hidden h-8 w-auto lg:block" src="assets/logo.png" alt="To be united">
+        </div>
+      </div>
+      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <!-- Language dropdown -->
+        <div class="flex justify-center">
+          <div>
+            <div class="relative">
+              <button
+                class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                type="button"
+                data-te-dropdown-toggle-ref
+                aria-expanded="false">
+                <span class="sr-only">Open lang menu</span>
+                <div [innerHTML]="languageService.getCurrentLang().icon | sanitizeHtml"></div>
+              </button>
+              <ul
+                class="absolute m-0 hidden min-w-max list-none overflow-hidden right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none [&[data-te-dropdown-show]]:block"
+                data-te-dropdown-menu-ref
+              >
+                <li *ngFor="let one of languageService.getLanguages()">
+                  <button
+                    class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-neutral-100 active:text-neutral-800 active:no-underline" role="menuitem" tabindex="-1" (click)="languageService.changeLang(one)"
+                    data-te-dropdown-item-ref
+                  > <div class="flex items-start"><div [innerHTML]="one.icon | sanitizeHtml"></div>{{one.title}}</div></button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

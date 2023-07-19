@@ -1,0 +1,36 @@
+<div class="mx-6 sticky top-12 bottom-12 mt-2">
+  <div class="border shadow-md rounded bg-white px-4 py-3 mt-8">
+    <div><div *ngIf="($sum|async)" >
+      <span class="text-xl">₴{{$sum|async}}</span>
+      <span class="text-gray-600 mx-1"> raised of ₴{{$goal|async}} goal</span>
+    </div>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-blue-100">
+      <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-700" [style.width]="($progress|async) + '%'"></div>
+    </div>
+    <div>
+      <span class="text-xl">{{$daysLeft|async}} days</span>
+      <span class="text-gray-600 mx-1"> left of {{$dateDiff|async}} days</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-blue-100">
+      <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-700" [style.width]="($progressDate|async) + '%'"></div>
+    </div>
+    <div class="flex items-center justify-center">
+      <button (click)="onClick()" class="rounded bg-blue-700 text-yellow-400 shadow text-xl px-3 py-2 mr-3 w-full">Donate
+      </button>
+      <button class="rounded bg-yellow-400 text-blue-700 shadow text-xl px-3 py-2 w-full">Share</button>
+    </div>
+    <hr class="m-6" />
+    <ul>
+      <li *ngIf="$recent|async as recent">
+        <app-top-list-item [item]="recent" [title]="'Recent donation'" ></app-top-list-item>
+      </li>
+      <li *ngIf="$top|async as top">
+        <app-top-list-item [item]="top" [title]="'Top donation'" ></app-top-list-item>
+      </li>
+      <li *ngIf="$fist|async as first">
+        <app-top-list-item [item]="first" [title]="'First donation'" ></app-top-list-item>
+      </li>
+    </ul>
+  </div>
+</div>
