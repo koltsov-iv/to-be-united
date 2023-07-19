@@ -13,11 +13,11 @@ export class CheckoutComponent {
   public controls = {
     sum: new FormControl<number>(100),
     firstname: new FormControl<string>(""),
-    is_anonymous: new FormControl<boolean>(false),
+    isAnonymous: new FormControl<boolean>(false),
     wish: new FormControl<string>(""),
     email: new FormControl<string>(""),
-    no_communication: new FormControl<boolean>(false),
-    not_public_name: new FormControl<boolean>(false),
+    noCommunication: new FormControl<boolean>(false),
+    notPublicName: new FormControl<boolean>(false),
     subscription: new FormControl<boolean>(true),
     participation: new FormControl<boolean>(true),
   }

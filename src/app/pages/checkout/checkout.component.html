@@ -17,7 +17,7 @@
           </div>
           <div class="mb-4">
             <label for="is_anonymous" class="block text-gray-500 font-bold">
-              <input class="mr-2 leading-tight" [formControl]="controls.is_anonymous" type="checkbox" id="is_anonymous">
+              <input class="mr-2 leading-tight" [formControl]="controls.isAnonymous" type="checkbox" id="is_anonymous">
               <span class="text-sm">{{translations.anonymous | translate }}</span>
             </label>
           </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="mb-4">
           <label for="no_communication" class="block text-gray-500 font-bold">
-            <input [formControl]="controls.no_communication" type="checkbox" id="no_communication">
+            <input [formControl]="controls.noCommunication" type="checkbox" id="no_communication">
             <span class="text-sm px-2">{{translations.no_communication | translate}}</span>
           </label>
         </div>
@@ -37,7 +37,7 @@
       <div>
         <div>
           <label for="not_public_name" class="block text-gray-500 font-bold">
-            <input [formControl]="controls.not_public_name" type="checkbox" id="not_public_name">
+            <input [formControl]="controls.notPublicName" type="checkbox" id="not_public_name">
             <span class="text-sm px-2">{{translations.not_public_name | translate}}</span>
             <!--        <icon>?</icon>-->
           </label>
