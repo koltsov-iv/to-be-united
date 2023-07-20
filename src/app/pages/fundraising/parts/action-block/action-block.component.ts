@@ -38,20 +38,23 @@ export class ActionBlockComponent implements OnInit {
   ngOnInit(): void {
     this.$statement.subscribe((val) => {
       var res = 0
-      var top: number = 0
+      var top: DonationResponse | undefined
       val.map((one, index) => {
         if (index == 0) {
-          this.$fist.next(one)
-        }
-        if ((index + 1) == val.length) {
           this.$recent.next(one)
         }
-        if (one.sum > top) {
-          this.$top.next(one)
+        if ((index + 1) == val.length) {
+          this.$fist.next(one)
+        }
+        if (!top || one.sum > top.sum) {
+          top = one
         }
         res += one.sum
       })
-      this.$sum.next(res)
+      if (top != undefined) {
+        this.$top.next(top)
+      }
+      this.$sum.next(res ? res / 100 : 0)
     })
     this.$fundraising.subscribe((fundraising) => {
       const now = new Date()
@@ -66,6 +69,4 @@ export class ActionBlockComponent implements OnInit {
         this.$progress.next((this.$sum.getValue() / val[1].goal) * 100)
       })
   }
-
-
 }

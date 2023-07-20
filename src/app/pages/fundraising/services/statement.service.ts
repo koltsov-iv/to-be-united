@@ -1,7 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {delay, of} from "rxjs";
+import {delay, map, of} from "rxjs";
 import {DonationResponse} from "./donationResponse";
+import {Translations} from "../../../../services/language/translations.service";
 
 @Injectable()
 export class StatementService {
@@ -26,7 +27,10 @@ export class StatementService {
     },
   ]
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private translation: Translations,
+  ) {
 
   }
 
@@ -34,7 +38,15 @@ export class StatementService {
     let httpHeaders = new HttpHeaders();
     return this.http.get<DonationResponse[]>("http://tobeunited.co.uk:8383/donation", {
       headers: httpHeaders,
-    })
+    }).pipe(map(
+      results => results.sort(
+        (x, y) => x.date > y.date ? -1 : 1)
+    )).pipe(map(results => {
+      return results.map((val) => {
+        val.firstname = val.firstname ? val.firstname : this.translation.anonymous
+        return val
+      })
+    }))
   }
 
 }

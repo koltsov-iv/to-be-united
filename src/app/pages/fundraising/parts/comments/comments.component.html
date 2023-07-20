@@ -18,10 +18,10 @@
           </div>
           <div>
             <header class="font-bold text-xl text-gray-900">
-              <div>{{one.firstname}}</div>
+              <div>{{one.firstname|translate}}</div>
             </header>
             <div>
-              <span class="font-medium">₴{{one.sum}}</span>
+              <span class="font-medium">{{one.sum/100|currency:'UAH':'₴':'1.0-0'}}</span>
               <span class="text-gray-300 mx-3 text-xl">•</span>
               <span class="text-gray-500">{{FromNow(one)}}</span>
             </div>

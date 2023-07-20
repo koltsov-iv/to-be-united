@@ -4,10 +4,10 @@
   </div>
   <div>
     <header class="text-md text-gray-900">
-      <div>{{item.firstname}}</div>
+      <div>{{item.firstname|translate}}</div>
     </header>
     <div>
-      <span class="font-medium">₴{{item.sum}}</span>
+      <span class="font-medium">{{item.sum/100|currency:'UAH':'₴':'1.0-0'}}</span>
       <span class="text-gray-300 mx-2 text-xl">•</span>
       <span class="text-gray-500 ml-2">{{title}}</span>
     </div>

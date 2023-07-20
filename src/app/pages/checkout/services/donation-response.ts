@@ -1,5 +1,5 @@
 export interface DonationResponse {
-  id: number
-  userID: number
+  id: string
+  userID: string
   donationLink: string
 }

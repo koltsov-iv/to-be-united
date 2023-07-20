@@ -18,6 +18,6 @@ export class CommentsComponent {
   }
 
   FromNow(one: DonationResponse): string {
-    return moment(one.date, "YYYY-MM-DD").fromNow()
+    return moment(one.date).fromNow()
   }
 }
