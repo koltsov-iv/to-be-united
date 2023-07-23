@@ -62,7 +62,7 @@
       </div>
 
       <div class="py-3">
-        <span class="block py-3">{{translations.your_donation | translate}} {{controls.sum.value}}</span>
+        <span class="block py-3">{{translations.your_donation | translate}} {{controls.sum.value|currency:'UAH':'₴':'1.0-0'}}</span>
         <button type="submit" class="shadow bg-gray-900 text-white text-2xl rounded py-2 px-6">Mono Pay</button>
       </div>
     </form>
