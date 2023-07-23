@@ -3,6 +3,7 @@ import en from '@assets/languages/en';
 import ua from '@assets/languages/ua';
 import {from, map, Observable, pluck} from "rxjs";
 import {TranslateLoader} from "@ngx-translate/core";
+import pr from "@assets/languages/pr";
 
 export function GenericClass<Props>(): new () => Props {
   return class {
@@ -12,7 +13,18 @@ export function GenericClass<Props>(): new () => Props {
 export class WebpackTranslateLoader implements TranslateLoader {
   getTranslation(lang: string) {
     //Todo: load only necessary language
-    const source = lang=="en"?en:ua
+    var source
+    switch (lang){
+      case "en":
+        source = en
+        break
+      case "ua":
+        source = ua
+        break
+      case "pr":
+        source = pr
+        break
+    }
     return from([source]);
   }
 }
