@@ -9,7 +9,7 @@ export class FundraisingService {
 
   tmp: Fundraising = {
     dateStart: new Date("2023-07-27"),
-    dateClose: new Date("2023-07-31"),
+    dateClose: new Date("2023-08-01"),
     goal: 120000,
   }
   constructor() { }

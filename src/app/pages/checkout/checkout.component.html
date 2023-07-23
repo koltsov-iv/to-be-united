@@ -3,38 +3,43 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div>
         <div class="mb-4">
-          <label for="sum" class="block text-gray-700 text-sm font-bold sm-2">{{translations.sum | translate}}</label>
-          <input class="text-input-primary" [formControl]="controls.sum" type="number" id="sum">
+          <label for="sum" class="block text-gray-700 text-sm font-bold sm-2 my-1">{{translations.sum | translate}}</label>
+          <input [ngClass]="submitted && controls.sum.errors?'text-input-primary border-red-500':'text-input-primary'" [formControl]="controls.sum" type="number" id="sum">
+          <span *ngIf="submitted && controls.sum.errors?.['required']" class="text-red-500 text-xs mt-1 ml-1">{{translations.form_sum_require_err|translate}}</span>
         </div>
         <div class="mb-4">
-          <label for="wish" class="label-primary">{{translations.wish_you | translate}}</label>
+          <label for="wish" class="label-primary my-1">{{translations.wish_you | translate}}</label>
           <input [formControl]="controls.wish" type="text" id="wish" class="text-input-primary" placeholder="{{translations.wish_you_placeholder | translate}}">
         </div>
         <div class="flex items-center justify-between">
+          <div>
           <div class="mb-4">
-            <label class="label-primary" for="firstname">{{translations.yours | translate}}</label>
-            <input class="text-input-primary" [formControl]="controls.firstname" id="firstname" type="text" placeholder="{{translations.yours_placeholder | translate}}">
+            <label class="label-primary my-1" for="firstname">{{translations.yours | translate}}</label>
+            <input [ngClass]="submitted && controls.firstname.errors?'text-input-primary border-red-500':'text-input-primary'" [formControl]="controls.firstname" id="firstname" type="text" placeholder="{{translations.yours_placeholder | translate}}">
+            <span *ngIf="submitted && controls.firstname.errors?.['required']" class="text-red-500 text-xs mt-1 ml-1">{{translations.form_contact_require_err|translate}}</span>
           </div>
-          <div class="mb-4">
-            <label for="is_anonymous" class="block text-gray-500 font-bold">
+            <div class="mb-4">
+              <label class="label-primary my-1" for="email">Email</label>
+              <input [ngClass]="submitted && controls.email.errors?'text-input-primary border-red-500':'text-input-primary'" [formControl]="controls.email" id="email" type="email">
+              <span *ngIf="submitted && controls.email.errors?.['required']" class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">{{translations.form_contact_require_err|translate}}</span>
+              <span *ngIf="submitted && controls.email.errors?.['email']" class="text-red-500 text-xs mt-1 ml-1">{{translations.form_email_err|translate}}</span>
+            </div>
+          </div>
+          <div class="mb-4 my-4">
+            <label for="is_anonymous" class="text-gray-500 font-bold flex items-top">
               <input class="mr-2 leading-tight" [formControl]="controls.isAnonymous" type="checkbox" id="is_anonymous">
               <span class="text-sm">{{translations.anonymous | translate }}</span>
             </label>
           </div>
         </div>
-        <div class="mb-4">
-          <label class="label-primary" for="email">Email</label>
-          <input class="text-input-primary" [formControl]="controls.email" id="email" type="email">
-        </div>
+      </div>
+      <div>
         <div class="mb-4">
           <label for="no_communication" class="block text-gray-500 font-bold">
             <input [formControl]="controls.noCommunication" type="checkbox" id="no_communication">
             <span class="text-sm px-2">{{translations.no_communication | translate}}</span>
           </label>
         </div>
-      </div>
-
-      <div>
         <div>
           <label for="not_public_name" class="block text-gray-500 font-bold">
             <input [formControl]="controls.notPublicName" type="checkbox" id="not_public_name">
@@ -58,7 +63,7 @@
 
       <div class="py-3">
         <span class="block py-3">{{translations.your_donation | translate}} {{controls.sum.value}}</span>
-        <button type="submit" class="shadow bg-gray-900 text-white text-2xl rounded py-2 px-3">Mono Pay</button>
+        <button type="submit" class="shadow bg-gray-900 text-white text-2xl rounded py-2 px-6">Mono Pay</button>
       </div>
     </form>
   </div>

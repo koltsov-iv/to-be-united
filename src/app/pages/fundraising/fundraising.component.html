@@ -1,49 +1,31 @@
 <div class="flex justify-center">
   <div class="max-w-2xl">
     <h2 class="font-bold text-3xl mt-8 mb-4">
-      Святковий Дрон Дніпро-1
+      {{translations.fundraising_page.title|translate}}
       <span
         class="align-top bg-green-100 text-green-800 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded dark:bg-green-900 dark:text-green-300">
-      In process
+      {{translations.fundraising_page.status_badge|translate}}
     </span>
     </h2>
 
     <div class="flex">
-      <img ngSrc="assets/drone-page/me.png" alt="" class="rounded" width="310" height="400"/>
-      <img ngSrc="assets/drone-page/receivers.jpg" alt="" class="rounded" width="310" height="400"/>
+      <img ngSrc="assets/drone-page/my_new-min.JPG" alt="" class="rounded" width="310" height="400"/>
+      <img ngSrc="assets/drone-page/receivers-min.jpg" alt="" class="rounded" width="310" height="400"/>
     </div>
-    <span class="text-sm text-gray-500 mt-2">Дарую дрон Дніпрам на свій день нарождения.</span>
-    <div class="mt-8">
-      <div>Активно допомогаю друзям на фронті а на ДН є бажання зробити щось більш корисне ніж "щоденний донат",
-        тому вирішив відкрити цей збір.
-      </div>
-      <div class="font-bold mt-4"> Бекграунд:</div>
-      <div class="mt-2">Купував дрон за свої в попередній ДН, пацани залишились довольні.</div>
-      <div class="font-bold mt-4"> Актуальність:</div>
-      <div class="italic mt-2"> Чому саме Дніпрам-1?</div>
-      <div class="ml-2"> -
-        Маю друзів в декількох підрозділах на донецькому напрямкахб поспілкувався із усіма,
-        Дніпрам зараз гаряче і потрібна підтримка.
-      </div>
-      <div class="italic mt-2"> Чому саме Дрон?</div>
-      <div class="ml-2"> - Найактуальнійший запит був саме про дрон + я маю певну експкртізу в придбанні та доставці.
-      </div>
-      <div class="italic mt-2"> Чому роблю це самостійно, а не через фонд?</div>
-      <ul class="ml-2">
-        <li> - Хочу зберегти ресурси волонтерів, опрацювання кожного запита це расход ресурсів волонтерського часу</li>
-        <li> - Хочу заощадити ресурси донарів, купувати самостійно це дешевше - я купую в Европі офлайн при цьому
-          оформлюючи tax-free при перетині кордону, ці
-          гроші підуть на наступний донат
-        </li>
-        <li> - Хочу провести якісну комунікацію із учасниками збору в рамках цього проекту. (Про проект)</li>
-      </ul>
-    </div>
+    <span class="text-sm text-gray-500 mt-2">{{translations.fundraising_page.media_subtitle|translate}}</span>
+    <div class="mt-8 line-clamp-10" id="body-inner-text" [innerHTML]="translations.fundraising_page.body_description|translate|sanitizeHtml"></div>
+    <div class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more" (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
     <hr class="mt-8"/>
     <div>
-      <h2 class="font-bold text-3xl mt-4">Updates</h2>
+      <h2 class="font-bold text-3xl mt-4">{{translations.fundraising_page.updates|translate}}</h2>
     </div>
     <hr class="mt-8"/>
-    <app-comments [statement]="$statement"></app-comments>
+    <div class="mb-12">
+      <h2 class="font-bold text-3xl mt-4">{{translations.fundraising_page.comments|translate}}
+        ({{($statement|async)?.length}})</h2>
+      <p class=" text-gray-500 mt-2">{{translations.fundraising_page.comments_subheader|translate}}</p>
+      <app-comments [statement]="$statement"></app-comments>
+    </div>
   </div>
-    <app-action-block class="mt-12" [statement]="$statement" [fundraising]="$fundraising"></app-action-block>
+  <app-action-block class="mt-12" [statement]="$statement" [fundraising]="$fundraising"></app-action-block>
 </div>

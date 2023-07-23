@@ -30,6 +30,7 @@
     "@angular/cli": "~16.0.5",
     "@angular/compiler-cli": "^16.0.0",
     "@iconify-icons/emojione": "^1.2.6",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@types/jasmine": "~4.3.0",
     "autoprefixer": "^10.4.14",
     "jasmine-core": "~4.6.0",

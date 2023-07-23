@@ -8,10 +8,16 @@ module.exports = {
     //   primary: "#261A8F",
     //   secondary: "#FFEC54"
     // },
-    extend: {},
+    extend: {
+      lineClamp: {
+        10: '10',
+        20: '20',
+      },
+    },
   },
   plugins: [
-    require("tw-elements/dist/plugin.cjs")
+    require("tw-elements/dist/plugin.cjs"),
+    require('@tailwindcss/line-clamp'),
   ],
 }
 

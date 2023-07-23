@@ -4,6 +4,7 @@ import {BehaviorSubject, combineLatest, Subject} from "rxjs";
 import {Fundraising} from "../../services/fundraising";
 import * as moment from "moment";
 import {DonationResponse} from "../../services/donationResponse";
+import {Translations} from "../../../../../services/language/translations.service";
 
 @Component({
   selector: 'app-action-block',
@@ -28,6 +29,7 @@ export class ActionBlockComponent implements OnInit {
 
   constructor(
     public router: Router,
+    public translations: Translations,
   ) {
   }
 
