@@ -5,10 +5,10 @@
       <span class="text-gray-600 mx-1">
         {{translations.action_block.raised_goal|translate:{"goal": $goal|async|currency:'UAH':'₴':'1.0-0'} }}
       </span>
-      <div class="md:hidden">
+      <span class="md:hidden">
         <span class="text-gray-300 mx-2 text-xl">•</span>
         <span class="text-gray-600 mx-1 ">{{($size|async)}} {{translations.action_block.donations|translate}}</span>
-      </div>
+      </span>
     </div>
   </div>
   <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2 md:mb-4 dark:bg-blue-100">
