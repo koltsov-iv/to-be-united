@@ -33,8 +33,8 @@ export class FundraisingComponent implements OnInit {
     })
   }
 
-  isNotSafari(): boolean {
-    return this.deviceService.browser !== 'Safari'
+  showReadMore(): boolean {
+    return this.deviceService.browser !== 'Safari' && !this.deviceService.isMobile()
   }
 
   readMoreBody(): void {

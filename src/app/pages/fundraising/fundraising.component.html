@@ -26,7 +26,7 @@
     </div>
     <div class="md:mt-8 line-clamp-10" id="body-inner-text"
          [innerHTML]="translations.fundraising_page.body_description|translate|sanitizeHtml"></div>
-    <div *ngIf="isNotSafari()" class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more"
+    <div *ngIf="showReadMore()" class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more"
          (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
     <hr class="mt-6 md:mt-8"/>
     <div>
