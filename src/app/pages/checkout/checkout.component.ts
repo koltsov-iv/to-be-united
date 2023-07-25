@@ -61,10 +61,7 @@ export class CheckoutComponent implements OnInit {
     this.donationService.sendRequest(this.form.value as DonationRequest).subscribe((val) => {
       console.log(val)
       this.userService.StoreID(val.userID)
-      window.open(val.donationLink)
-      setTimeout(() => {
-        this.router.navigate([""])
-      }, 1000)
+      window.location.href = val.donationLink
     })
   }
 }
