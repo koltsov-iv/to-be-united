@@ -62,6 +62,9 @@ export class CheckoutComponent implements OnInit {
       console.log(val)
       this.userService.StoreID(val.userID)
       window.location.href = val.donationLink
+      setTimeout(() => {
+        this.router.navigate([""])
+      }, 10*1000)
     })
   }
 }
