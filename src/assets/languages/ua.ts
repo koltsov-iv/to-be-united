@@ -1,7 +1,7 @@
 const ua: typeof import('./en').default = {
   donate: "Донат",
   share: "Репост",
-  sum: "Внесок",
+  sum: "Внесок, UAH",
   wish_you: "Бажаю",
   wish_you_placeholder: "Щастя, здоровья",
   yours: "Від",

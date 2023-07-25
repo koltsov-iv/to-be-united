@@ -1,7 +1,7 @@
 const pr: typeof import('./en').default = {
   donate: "Doar",
   share: "Compartilhar",
-  sum: "Valor",
+  sum: "Valor, UAH",
   wish_you: "Desejo-lhe",
   wish_you_placeholder: "Boa sorte!",
   yours: "Seu",

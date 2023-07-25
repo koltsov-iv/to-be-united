@@ -1,7 +1,7 @@
 const en = {
   donate: "Donate",
   share: "Share",
-  sum: "Sum",
+  sum: "Sum, UAH",
   wish_you: "Wish you",
   wish_you_placeholder: "Good luck!",
   yours: "Yours",
