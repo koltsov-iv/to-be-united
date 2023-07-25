@@ -19,7 +19,8 @@ const en = {
     title: "Birthday drone for Dnipro-1",
     status_badge: "In progress",
     media_subtitle: "In the photo, I bought a drone for Dnipro-1 last year.",
-    body_description: `<div>
+    body_description: `
+    <div>
         <p>Just had a conversation with my friends; they are currently stationed at the Limansk front
         and actively engaged in combat operations. They are going through a tough time and are in need of assistance,
         counting on our support.</p>
@@ -51,10 +52,10 @@ const en = {
         <li> - I want to establish effective communication with the participants involved in this project.
         (About the project)</li>
       </ul>
-      <div class="flex justify-start space-x-2 mt-4">
-      <span>Media of the unit:</span>
-      <a href="https://t.me/d1air" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/telegram.svg" alt="Telegram channel"></a>
-      <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/instagram.svg" alt="Commander"></a>
+      <div class="flex justify-start space-x-3 mt-4">
+        <span>Media of the unit:</span>
+        <a href="https://t.me/d1air" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/telegram.svg" alt="Telegram channel"></a>
+        <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/instagram.svg" alt="Commander"></a>
       </div>
 `,
     updates: "Updates",

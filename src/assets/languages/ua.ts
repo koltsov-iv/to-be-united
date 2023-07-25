@@ -48,10 +48,10 @@ const ua: typeof import('./en').default = {
         <li> - Хочу провести якісну комунікацію із учасниками збору в рамках цього проекту. (Про проект)</li>
       </ul>
       <div>
-      <div class="flex justify-start space-x-2 mt-4">
+      <div class="flex justify-start space-x-3 mt-4">
       <span> Медіа підрозділу:</span>
-      <a href="https://t.me/d1air" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/telegram.svg" alt="Характерники"></a>
-      <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/instagram.svg" alt="Командир"></a>
+      <a href="https://t.me/d1air" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/telegram.svg" alt="Характерники"></a>
+      <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/instagram.svg" alt="Командир"></a>
       </div>
        </div>
 `,

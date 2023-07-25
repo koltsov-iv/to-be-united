@@ -19,7 +19,8 @@ const pr: typeof import('./en').default = {
     title: "Drone de Aniversário para Dnipro-1",
     status_badge: "Em andamento",
     media_subtitle: "Na foto, estou comprando um drone para Dnipro-1 para o meu aniversário no ano passado.",
-    body_description: `<div>
+    body_description: `
+    <div>
         <p>Acabei de ter uma conversa com meus amigos; eles estão atualmente posicionados na frente de Limansk
         e ativamente envolvidos em operações de combate. Eles estão passando por um momento difícil e precisam de ajuda,
         contando com o nosso apoio.</p>
@@ -52,10 +53,10 @@ const pr: typeof import('./en').default = {
         <li> - Quero estabelecer uma comunicação efetiva com os participantes envolvidos neste projeto.
         (Sobre o projeto)</li>
       </ul>
-      <div class="flex justify-start space-x-2 mt-4">
+      <div class="flex justify-start space-x-3 mt-4">
       <span>Mídia da unidade:</span>
-      <a href="https://t.me/d1air" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/telegram.svg" alt="Canal do Telegram"></a>
-      <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="20px" height="20px" src="../assets/drone-page/instagram.svg" alt="Comandante"></a>
+      <a href="https://t.me/d1air" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/telegram.svg" alt="Canal do Telegram"></a>
+      <a href="https://instagram.com/podvorchanskiy" target="_blank"><img width="25px" height="25px" src="../assets/drone-page/instagram.svg" alt="Comandante"></a>
       </div>
 `,
     updates: "Atualizações",
