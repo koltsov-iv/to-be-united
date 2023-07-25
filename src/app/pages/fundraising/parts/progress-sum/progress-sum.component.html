@@ -1,0 +1,13 @@
+<div class="flex justify-items-start flex-col">
+  <div class="order-last md:order-first">
+    <div *ngIf="($sum|async)">
+      <span class="text-xl">{{$sum|async|currency:'UAH':'₴':'1.0-0'}}</span>
+      <span class="text-gray-600 mx-1">
+        {{translations.action_block.raised_goal|translate:{"goal": $goal|async|currency:'UAH':'₴':'1.0-0'} }}
+      </span>
+    </div>
+  </div>
+  <div class="w-full bg-gray-200 rounded-full h-1.5 mb-2 md:mb-4 dark:bg-blue-100">
+    <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-700" [style.width]="($progress|async) + '%'"></div>
+  </div>
+</div>

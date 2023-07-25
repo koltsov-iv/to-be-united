@@ -1,0 +1,7 @@
+<div>
+  <span class="text-xl"></span>
+  <span class="text-gray-600 mx-1" [innerHTML]="translations.action_block.days_left|translate: {days_left: $daysLeft|async, days_all: $dateDiff|async}"></span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-1.5 mb-4 dark:bg-blue-100">
+  <div class="bg-blue-600 h-1.5 rounded-full dark:bg-blue-700" [style.width]="($progressDate|async) + '%'"></div>
+</div>
