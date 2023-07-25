@@ -2,6 +2,7 @@ import {TranslateService} from '@ngx-translate/core';
 import {Inject, Injectable, Provider} from '@angular/core';
 import {Lang} from "./lang";
 import {ILanguageRepository} from "./language.repository";
+import {ActivatedRoute, Router} from "@angular/router";
 
 export interface ILanguageService {
   getLanguages(): Lang[];
@@ -35,7 +36,8 @@ export class LanguageService implements ILanguageService {
 
   constructor(
     private readonly translateService: TranslateService,
-    @Inject('ILanguageRepository') private readonly languageRepository: ILanguageRepository
+    @Inject('ILanguageRepository') private readonly languageRepository: ILanguageRepository,
+    private route: ActivatedRoute,
   ) {
   }
 
@@ -53,19 +55,24 @@ export class LanguageService implements ILanguageService {
     this.translateService.use(langKey);
   }
 
-  setDefault(): void {
-    this.translateService.setDefaultLang('en');
-    this.translateService.use('en');
-    this.languageRepository.setLangKey('en');
+  private set(lang: string): void {
+    this.translateService.setDefaultLang(lang);
+    this.translateService.use(lang);
+    this.languageRepository.setLangKey(lang);
   }
 
   getLangKey(): string {
-    const lang = this.languageRepository.getCurrentLangKey();
-    if (lang === null) {
-      this.setDefault();
+    let lang = this.languageRepository.getCurrentLangKey();
+    if (lang) {
+      return lang;
+    }
+    lang = this.route.snapshot.queryParamMap.get("lang")
+    if (lang) {
+      this.set(lang);
       return this.getLangKey();
     }
-    return lang;
+    this.set("en");
+    return this.getLangKey();
   }
 
   changeLang(one: Lang) {

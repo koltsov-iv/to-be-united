@@ -22,6 +22,8 @@ import { TopDonationListComponent } from './pages/fundraising/parts/top-donation
 import { ActionButtonsComponent } from './pages/fundraising/parts/action-buttons/action-buttons.component';
 import { ProgressSumComponent } from './pages/fundraising/parts/progress-sum/progress-sum.component';
 import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/progress-date.component';
+import { ShareDialogComponent } from './pages/fundraising/parts/share-dialog/share-dialog.component';
+import {ClipboardModule} from "ngx-clipboard";
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/p
     ActionButtonsComponent,
     ProgressSumComponent,
     ProgressDateComponent,
+    ShareDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/p
     ReactiveFormsModule,
     NgOptimizedImage,
     HttpClientModule,
+    ClipboardModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
