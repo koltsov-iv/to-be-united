@@ -5,6 +5,7 @@ import {DonationResponse} from "./services/donationResponse";
 import {Fundraising} from "./services/fundraising";
 import {FundraisingService} from "./services/fundraising.service";
 import {Translations} from "../../../services/language/translations.service";
+import {DeviceDetectorService} from "ngx-device-detector";
 
 @Component({
   selector: 'app-fundraising',
@@ -19,6 +20,7 @@ export class FundraisingComponent implements OnInit {
     public fundraisingService: FundraisingService,
     public translations: Translations,
     private el: ElementRef,
+    private deviceService: DeviceDetectorService
   ) {
   }
 
@@ -29,6 +31,10 @@ export class FundraisingComponent implements OnInit {
     this.fundraisingService.findOne().subscribe((val) => {
       this.$fundraising.next(val)
     })
+  }
+
+  isNotSafari(): boolean {
+    return this.deviceService.browser !== 'Safari'
   }
 
   readMoreBody(): void {
