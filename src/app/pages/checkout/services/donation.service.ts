@@ -12,6 +12,6 @@ export class DonationService {
   constructor(private http: HttpClient) { }
 
   sendRequest(data: DonationRequest): Observable<DonationResponse> {
-    return this.http.post<DonationResponse>("http://tobeunited.co.uk:8383/donation-request", data)
+    return this.http.post<DonationResponse>("https://api.tobeunited.co.uk/donation-request", data)
   }
 }
