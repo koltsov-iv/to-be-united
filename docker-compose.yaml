@@ -14,4 +14,4 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-    command: certonly --webroot -w /var/www/certbot --force-renewal --email koltsov.iv@gmail.com -d tobeunited.co.uk --agree-tos
+    command: certonly --webroot -w /var/www/certbot --force-renewal --email koltsov.iv@gmail.com -d tobeunited.co.uk -d api.tobeunited.co.uk --agree-tos
