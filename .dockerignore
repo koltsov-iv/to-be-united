@@ -8,3 +8,5 @@
 /docs
 .gitignore
 *.zip
+docker-compose.yaml
+init-letsencrypt.sh
