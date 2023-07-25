@@ -63,10 +63,14 @@ const ua: typeof import('./en').default = {
   },
   action_block: {
     raised_goal: "зібрано з {{goal}}",
+    donations: "долучились",
     days_left: "Залишилось <b>{{days_left}}</b> з {{days_all}} днів",
     recent_donation: "Нещодавно",
     top_donation: "Топ внесок",
     first_donation: "Перший внесок",
+    share_link: "Поділитись",
+    copy_link: "Copy link",
+    close: "Закрити",
   },
 }
 

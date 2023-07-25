@@ -67,10 +67,14 @@ const pr: typeof import('./en').default = {
   },
   action_block: {
     raised_goal: "arrecadados de {{goal}}",
+    donations: "doaçãos",
     days_left: "Restam <b>{{days_left}}</b> dias de {{days_all}} dias",
     recent_donation: "Doação recente",
     top_donation: "Maior doação",
     first_donation: "Primeira doação",
+    share_link: "Share link",
+    copy_link: "Copy link",
+    close: "Close",
   },
 }
 export default pr

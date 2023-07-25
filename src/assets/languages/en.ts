@@ -66,10 +66,14 @@ const en = {
   },
   action_block: {
     raised_goal: "raised of {{goal}}",
+    donations: "donations",
     days_left: "Left <b>{{days_left}}</b> days of {{days_all}} days",
     recent_donation: "Recent donation",
     top_donation: "Top donation",
     first_donation: "First donation",
+    share_link: "Share link",
+    copy_link: "Copy link",
+    close: "Close",
   },
 }
 export default en

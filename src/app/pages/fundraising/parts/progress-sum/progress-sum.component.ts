@@ -16,6 +16,7 @@ export class ProgressSumComponent implements OnInit {
   public $goal: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   public $sum: BehaviorSubject<number> = new BehaviorSubject<number>(0)
   public $progress: BehaviorSubject<number> = new BehaviorSubject<number>(0)
+  public $size: BehaviorSubject<number> = new BehaviorSubject<number>(0)
 
   constructor(
     public translations: Translations,
@@ -30,6 +31,7 @@ export class ProgressSumComponent implements OnInit {
         res += one.sum
       })
       this.$sum.next(res ? res / 100 : 0)
+      this.$size.next(val.length)
     })
     combineLatest([this.$sum, this.$fundraising])
       .subscribe((val) => {
