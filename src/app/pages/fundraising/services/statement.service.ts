@@ -36,7 +36,7 @@ export class StatementService {
 
   loadAll() {
     let httpHeaders = new HttpHeaders();
-    return this.http.get<DonationResponse[]>("http://tobeunited.co.uk:8383/donation", {
+    return this.http.get<DonationResponse[]>("https://api.tobeunited.co.uk/donation", {
       headers: httpHeaders,
     }).pipe(map(
       results => results.sort(
