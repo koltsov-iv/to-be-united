@@ -5,6 +5,7 @@ import {DonationService} from "./services/donation.service";
 import {DonationRequest} from "./services/donation-request";
 import {UserService} from "../../../services/user/user.service";
 import {Router} from "@angular/router";
+import {delay, timeout} from "rxjs";
 
 @Component({
   selector: 'app-checkout',
@@ -61,7 +62,9 @@ export class CheckoutComponent implements OnInit {
       console.log(val)
       window.open(val.donationLink, "_blank")
       this.userService.StoreID(val.userID)
-      this.router.navigate([""])
+      setTimeout(() => {
+        this.router.navigate([""])
+      }, 10000)
     })
   }
 }
