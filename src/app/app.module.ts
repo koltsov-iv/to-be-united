@@ -16,9 +16,12 @@ import {LocalStorageLanguageRepositoryProvider} from "../services/language/langu
 import {StatementService} from "./pages/fundraising/services/statement.service";
 import {SanitizeHtmlPipe} from './sanitize-html.pipe';
 import { CommentsComponent } from './pages/fundraising/parts/comments/comments.component';
-import { ActionBlockComponent } from './pages/fundraising/parts/action-block/action-block.component';
 import {FundraisingService} from "./pages/fundraising/services/fundraising.service";
-import { TopListItemComponent } from './pages/fundraising/parts/action-block/top-list-item/top-list-item.component';
+import { TopListItemComponent } from './pages/fundraising/parts/top-donation-list/top-list-item/top-list-item.component';
+import { TopDonationListComponent } from './pages/fundraising/parts/top-donation-list/top-donation-list.component';
+import { ActionButtonsComponent } from './pages/fundraising/parts/action-buttons/action-buttons.component';
+import { ProgressSumComponent } from './pages/fundraising/parts/progress-sum/progress-sum.component';
+import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/progress-date.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +31,11 @@ import { TopListItemComponent } from './pages/fundraising/parts/action-block/top
     ToolbarComponent,
     SanitizeHtmlPipe,
     CommentsComponent,
-    ActionBlockComponent,
     TopListItemComponent,
+    TopDonationListComponent,
+    ActionButtonsComponent,
+    ProgressSumComponent,
+    ProgressDateComponent,
   ],
   imports: [
     BrowserModule,

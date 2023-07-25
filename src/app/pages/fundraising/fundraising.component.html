@@ -1,31 +1,54 @@
-<div class="flex justify-center">
+<img ngSrc="assets/drone-page/my_new-min.JPG" alt="me and drone" class="h-64 w-screen object-cover md:hidden" width="320" height="440" priority/>
+<div class="flex justify-center px-4 md:px-8 py-2 md:py-4">
   <div class="max-w-2xl">
-    <h2 class="font-bold text-3xl mt-8 mb-4">
-      {{translations.fundraising_page.title|translate}}
-      <span
-        class="align-top bg-green-100 text-green-800 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded dark:bg-green-900 dark:text-green-300">
+    <div class="flex flex-col">
+      <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-8 md:mb-4 order-last md:order-first">
+        {{translations.fundraising_page.title|translate}}
+        <span
+          class="hidden md:inline align-top bg-green-100 text-green-800 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded dark:bg-green-900 dark:text-green-300">
       {{translations.fundraising_page.status_badge|translate}}
     </span>
-    </h2>
-
-    <div class="flex">
-      <img ngSrc="assets/drone-page/my_new-min.JPG" alt="" class="rounded" width="310" height="400"/>
-      <img ngSrc="assets/drone-page/receivers-min.jpg" alt="" class="rounded" width="310" height="400"/>
+      </h2>
+      <!--- Image block --->
+      <div class="max-w-2xl">
+        <div class="flex">
+          <img ngSrc="assets/drone-page/my_new-min.JPG" alt="me and drone" class="hidden md:block rounded-l" width="320" height="440"/>
+          <img ngSrc="assets/drone-page/receivers-min.jpg" alt="friends received drone" class="hidden md:block md:rounded-r" width="320" height="440"/>
+        </div>
+        <span class="text-sm text-gray-500 mt-2 hidden md:block">{{translations.fundraising_page.media_subtitle|translate}}</span>
+      </div>
     </div>
-    <span class="text-sm text-gray-500 mt-2">{{translations.fundraising_page.media_subtitle|translate}}</span>
-    <div class="mt-8 line-clamp-10" id="body-inner-text" [innerHTML]="translations.fundraising_page.body_description|translate|sanitizeHtml"></div>
-    <div class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more" (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
-    <hr class="mt-8"/>
+    <div class="md:hidden my-4">
+      <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
+    </div>
+    <div class="md:hidden my-4">
+      <app-action-buttons></app-action-buttons>
+    </div>
+    <div class="md:mt-8 line-clamp-10" id="body-inner-text"
+         [innerHTML]="translations.fundraising_page.body_description|translate|sanitizeHtml"></div>
+    <div class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more"
+         (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
+    <hr class="mt-6 md:mt-8"/>
     <div>
-      <h2 class="font-bold text-3xl mt-4">{{translations.fundraising_page.updates|translate}}</h2>
+      <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-4">{{translations.fundraising_page.updates|translate}}</h2>
     </div>
-    <hr class="mt-8"/>
+    <hr class="mt-6 md:mt-8"/>
     <div class="mb-12">
-      <h2 class="font-bold text-3xl mt-4">{{translations.fundraising_page.comments|translate}}
+      <h2 class="font-bold text-xl md:text-3xl mt-4">{{translations.fundraising_page.comments|translate}}
         ({{($statement|async)?.length}})</h2>
       <p class=" text-gray-500 mt-2">{{translations.fundraising_page.comments_subheader|translate}}</p>
       <app-comments [statement]="$statement"></app-comments>
     </div>
   </div>
-  <app-action-block class="mt-12" [statement]="$statement" [fundraising]="$fundraising"></app-action-block>
+  <div class="mt-12 hidden md:block">
+    <div class="mx-6 sticky top-12 bottom-12 mt-2">
+      <div class="border shadow-md rounded bg-white px-8 py-6 mt-8">
+        <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
+        <app-progress-date [statement]="$statement" [fundraising]="$fundraising"></app-progress-date>
+        <app-action-buttons class="mt-6"></app-action-buttons>
+        <hr class="my-6"/>
+        <app-top-donation-list [statement]="$statement"></app-top-donation-list>
+      </div>
+    </div>
+  </div>
 </div>

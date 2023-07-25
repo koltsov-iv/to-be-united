@@ -1,4 +1,4 @@
-<div class="items-center">
+<div class="items-center px-4 md:px-8 py-2 md:py-4">
   <div class="w-full max-w-sm">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div>
@@ -11,7 +11,7 @@
           <label for="wish" class="label-primary my-1">{{translations.wish_you | translate}}</label>
           <input [formControl]="controls.wish" type="text" id="wish" class="text-input-primary" placeholder="{{translations.wish_you_placeholder | translate}}">
         </div>
-        <div class="flex items-center justify-between">
+        <div class="">
           <div>
           <div class="mb-4">
             <label class="label-primary my-1" for="firstname">{{translations.yours | translate}}</label>
@@ -25,16 +25,16 @@
               <span *ngIf="submitted && controls.email.errors?.['email']" class="text-red-500 text-xs mt-1 ml-1">{{translations.form_email_err|translate}}</span>
             </div>
           </div>
-          <div class="mb-4 my-4">
-            <label for="is_anonymous" class="text-gray-500 font-bold flex items-top">
-              <input class="mr-2 leading-tight" [formControl]="controls.isAnonymous" type="checkbox" id="is_anonymous">
-              <span class="text-sm">{{translations.anonymous | translate }}</span>
-            </label>
-          </div>
         </div>
       </div>
       <div>
-        <div class="mb-4">
+        <div class="mt-4">
+          <label for="is_anonymous" class="text-gray-500 font-bold flex items-top">
+            <input class="mr-2 leading-tight" [formControl]="controls.isAnonymous" type="checkbox" id="is_anonymous">
+            <span class="text-sm">{{translations.anonymous | translate }}</span>
+          </label>
+        </div>
+        <div class="mt-2">
           <label for="no_communication" class="block text-gray-500 font-bold">
             <input [formControl]="controls.noCommunication" type="checkbox" id="no_communication">
             <span class="text-sm px-2">{{translations.no_communication | translate}}</span>

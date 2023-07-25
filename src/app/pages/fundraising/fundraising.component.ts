@@ -9,7 +9,6 @@ import {Translations} from "../../../services/language/translations.service";
 @Component({
   selector: 'app-fundraising',
   templateUrl: './fundraising.component.html',
-  styleUrls: ['./fundraising.component.css']
 })
 export class FundraisingComponent implements OnInit {
   public $statement: Subject<DonationResponse[]> = new Subject<DonationResponse[]>()

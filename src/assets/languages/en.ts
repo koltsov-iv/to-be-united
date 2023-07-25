@@ -18,7 +18,7 @@ const en = {
   fundraising_page: {
     title: "Birthday drone for Dnipro-1",
     status_badge: "In progress",
-    media_subtitle: "In the photo, I am buying a drone for Dnipro-1 for my birthday last year.",
+    media_subtitle: "In the photo, I bought a drone for Dnipro-1 last year.",
     body_description: `<div>
         <p>Just had a conversation with my friends; they are currently stationed at the Limansk front
         and actively engaged in combat operations. They are going through a tough time and are in need of assistance,
