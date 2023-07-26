@@ -51,7 +51,7 @@ const pr: typeof import('./en').default = {
         Eu os compro offline na Europa e utilizo o tax-free na fronteira, permitindo que o dinheiro economizado seja
         usado para a próxima doação.</li>
         <li> - Quero estabelecer uma comunicação efetiva com os participantes envolvidos neste projeto.
-        (Sobre o projeto)</li>
+        <a href="https://www.linkedin.com/in/koltsov-iv/recent-activity/all/">(Sobre o projeto)</a></li>
       </ul>
       <div class="flex justify-start space-x-3 mt-4">
       <span>Mídia da unidade:</span>

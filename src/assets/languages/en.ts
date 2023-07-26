@@ -13,7 +13,7 @@ const en = {
   no_communication: "Don't want to hear news about this fundraising",
   not_public_name: "Don't display my name publicly on the fundraiser",
   subscription: "Yes, want to hear how the project helps people. Unsubscribe anytime",
-  participation: "I'm happy to participate fathers fundraising from this source",
+  participation: "I'm happy to participate further fundraising from this source",
   your_donation: "Your donation:",
   fundraising_page: {
     title: "Birthday drone for Dnipro-1",
@@ -46,11 +46,11 @@ const en = {
 
       <div class="italic mt-2">Why am I doing this independently rather than through a foundation?</div>
       <ul class="ml-2">
-        <li> - I want to conserve the resources of volunteers; processing each request consumes their valuable time.</li>
-        <li> - I want to save donor resources; purchasing items directly is more cost-effective. I buy them offline in
+        <li> - To conserve the resources of volunteers; processing each request consumes their valuable time.</li>
+        <li> - To save donor resources; purchasing items directly is more cost-effective. I buy them offline in
          Europe and utilize tax-free at the border, allowing the saved money to be used for the next donation.</li>
-        <li> - I want to establish effective communication with the participants involved in this project.
-        (About the project)</li>
+        <li> - To establish effective communication with the participants involved in this project.
+        <a href="https://www.linkedin.com/in/koltsov-iv/recent-activity/all/">(About the project)</a></li>
       </ul>
       <div class="flex justify-start space-x-3 mt-4">
         <span>Media of the unit:</span>
