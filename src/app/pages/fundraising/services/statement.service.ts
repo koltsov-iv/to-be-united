@@ -46,7 +46,10 @@ export class StatementService {
         val.firstname = val.firstname ? val.firstname : this.translation.anonymous
         return val
       })
-    }))
+    })).pipe(
+      // TODO: To backend
+      map(result => result.filter(value => value.sum > 100))
+    )
   }
 
 }

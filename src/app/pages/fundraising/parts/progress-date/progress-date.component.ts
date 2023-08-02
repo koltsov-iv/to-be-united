@@ -4,6 +4,7 @@ import {DonationResponse} from "../../services/donationResponse";
 import {Fundraising} from "../../services/fundraising";
 import {Translations} from "../../../../../services/language/translations.service";
 import * as moment from "moment/moment";
+import pr from "@assets/languages/pr";
 
 @Component({
   selector: 'app-progress-date',
@@ -26,10 +27,14 @@ export class ProgressDateComponent implements OnInit {
   ngOnInit(): void {
     this.$fundraising.subscribe((fundraising) => {
       const now = new Date()
-      this.$progressDate.next((now.getTime() - fundraising.dateStart.getTime()) / (fundraising.dateClose.getTime() - fundraising.dateStart.getTime()) * 100)
+      let daysLeft = moment(fundraising.dateClose).diff(moment.now(), "days");
+      daysLeft = daysLeft>0?daysLeft:0
+      let daysDiff = moment(fundraising.dateClose).diff(moment(fundraising.dateStart), "days");
+      let progress = (daysDiff - daysLeft) / daysDiff * 100;
+      this.$progressDate.next(progress)
       console.log(fundraising.dateClose.getDate(), fundraising.dateStart.getDate())
-      this.$dateDiff.next(moment(fundraising.dateClose).diff(moment(fundraising.dateStart), "days"))
-      this.$daysLeft.next(moment(fundraising.dateClose).diff(moment.now(), "days"))
+      this.$dateDiff.next(daysDiff)
+      this.$daysLeft.next(daysLeft)
     })
   }
 }
