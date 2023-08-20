@@ -24,6 +24,7 @@ import { ProgressSumComponent } from './pages/fundraising/parts/progress-sum/pro
 import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/progress-date.component';
 import { ShareDialogComponent } from './pages/fundraising/parts/share-dialog/share-dialog.component';
 import {ClipboardModule} from "ngx-clipboard";
+import { DescriptionComponent } from './pages/fundraising/parts/description/description.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {ClipboardModule} from "ngx-clipboard";
     ProgressSumComponent,
     ProgressDateComponent,
     ShareDialogComponent,
+    DescriptionComponent,
   ],
   imports: [
     BrowserModule,

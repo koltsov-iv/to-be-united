@@ -24,10 +24,7 @@
     <div class="md:hidden my-4">
       <app-action-buttons></app-action-buttons>
     </div>
-    <div class="md:mt-8 line-clamp-10" id="body-inner-text"
-         [innerHTML]="translations.fundraising_page.body_description|translate|sanitizeHtml"></div>
-    <div *ngIf="showReadMore()" class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more"
-         (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
+    <app-description></app-description>
     <hr class="mt-6 md:mt-8"/>
     <div>
       <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-4">{{translations.fundraising_page.updates|translate}}</h2>

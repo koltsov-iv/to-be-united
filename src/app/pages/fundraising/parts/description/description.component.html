@@ -1,0 +1,3 @@
+<div #clampContent class="md:mt-8" [innerHTML]="showedContent"></div>
+<div *ngIf="showReadMore()" class="mt-4 font-bold underline hover:cursor-pointer" id="body-read-more"
+     (click)="readMoreBody()">{{translations.fundraising_page.read_more|translate}}</div>
