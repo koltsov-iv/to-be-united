@@ -16,7 +16,8 @@ const ua: typeof import('./en').default = {
   participation: "Буду радий долучитись до подальших ініціатив",
   your_donation: "Ваш внесок:",
   fundraising_page: {
-    title: "На Mavic-3 pro Дніпру-1",
+    title: "На Mavic-3 Дніпру-1",
+    published_at: "Опубліковано {{date}}",
     status_badge: "В процессі",
     media_subtitle: "На фото купив Мавік Дніпрам в тому році.",
     body_description: `<div>
@@ -64,7 +65,7 @@ const ua: typeof import('./en').default = {
   },
   action_block: {
     raised_goal: "зібрано з {{goal}}",
-    donations: "долучились",
+    donations: "донатів",
     days_left: "Залишилось <b>{{days_left}}</b> з {{days_all}} днів",
     recent_donation: "Нещодавно",
     top_donation: "Топ внесок",
@@ -73,6 +74,12 @@ const ua: typeof import('./en').default = {
     copy_link: "Copy link",
     close: "Закрити",
   },
+  updates: {
+    "1": `<p>На даний момент нам потрібно зібрати кошти на дрон Mavic-3 до кінця літа.
+        Купити треба в Україні, ціна стартує від 90 тис. грн.
+        Більшість коштів вже зібрано, тому давайте закриємо збір разом!</p>`
+  },
+  updated_by: `<span class="font-semibold">{{date}}</span> <span class="text-gray-500">- {{name}}</span>`,
 }
 
 export default ua;

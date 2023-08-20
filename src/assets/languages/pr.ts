@@ -17,6 +17,7 @@ const pr: typeof import('./en').default = {
   your_donation: "Sua doação:",
   fundraising_page: {
     title: "Drone de Aniversário para Dnipro-1",
+    published_at: "Publicado em {{date}}",
     status_badge: "Em andamento",
     media_subtitle: "Na foto, estou comprando um drone para Dnipro-1 para o meu aniversário no ano passado.",
     body_description: `
@@ -76,6 +77,13 @@ const pr: typeof import('./en').default = {
     copy_link: "Copy link",
     close: "Close",
   },
+  updates: {
+    "1": `<p>No momento, precisamos arrecadar fundos para o drone Mavic-3 até o final do verão.
+        O preço deste drone na Ucrânia começa em 90.000 UAH.
+        A maior parte do dinheiro já foi arrecadada, então vamos concluir esta arrecadação juntos!</p>`
+  },
+  updated_by: `<span class="">{{date}}</span> <span class="text-gray-500">- {{name}}</span>`,
+
 }
 export default pr
 

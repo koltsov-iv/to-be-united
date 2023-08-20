@@ -8,8 +8,9 @@ import {delay, of} from "rxjs";
 export class FundraisingService {
 
   tmp: Fundraising = {
+    id: 1,
     dateStart: new Date("2023-07-27"),
-    dateClose: new Date("2023-08-01"),
+    dateClose: new Date("2023-08-31"),
     goal: 89345,
   }
   constructor() { }

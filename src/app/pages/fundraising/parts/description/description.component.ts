@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {Translations} from "../../../../../services/language/translations.service";
 import {TranslateService} from "@ngx-translate/core";
 
@@ -13,12 +13,14 @@ export class DescriptionComponent implements OnInit, AfterViewInit {
   public showedContent = ''
   public isTruncated = false
   public isExpanded = false
+  public maxHeight = 120
 
   constructor(
     public translations: Translations,
     public translateService: TranslateService,
     private cdr: ChangeDetectorRef,
   ) {
+    this.setLineClampHeight();
   }
 
   ngOnInit() {
@@ -28,6 +30,21 @@ export class DescriptionComponent implements OnInit, AfterViewInit {
       this.cdr.detectChanges();
       this.applyLineClamp();
     });
+  }
+
+  // This listens for window resize events
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.setLineClampHeight();
+  }
+
+  // This method sets maxHeight based on window width
+  private setLineClampHeight(): void {
+    if (window.innerWidth >= 992) {
+      this.maxHeight = 200;
+    } else {
+      this.maxHeight = 120;
+    }
   }
 
   ngAfterViewInit(): void {
@@ -50,7 +67,6 @@ export class DescriptionComponent implements OnInit, AfterViewInit {
       return
     }
     const contentElement = this.clampContentElement.nativeElement;
-    const maxHeight = 200; // Adjust this value based on your design
 
     const clone = contentElement.cloneNode(true);
     contentElement.innerHTML = '';
@@ -58,7 +74,7 @@ export class DescriptionComponent implements OnInit, AfterViewInit {
       contentElement.appendChild(node.cloneNode(true));
     })
     let currentHeight = contentElement.clientHeight;
-    while (currentHeight > maxHeight) {
+    while (currentHeight > this.maxHeight) {
       const lastChild = contentElement.lastChild;
 
       if (lastChild) {

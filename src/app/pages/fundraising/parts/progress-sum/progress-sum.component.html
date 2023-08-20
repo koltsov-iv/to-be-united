@@ -1,12 +1,14 @@
 <div class="flex justify-items-start flex-col">
   <div class="order-last md:order-first">
-    <div *ngIf="($sum|async)">
-      <span class="text-xl">{{$sum|async|currency:'UAH':'₴':'1.0-0'}}</span>
-      <span class="text-gray-600 mx-1">
-        {{translations.action_block.raised_goal|translate:{"goal": $goal|async|currency:'UAH':'₴':'1.0-0'} }}
+    <div *ngIf="($sum|async)" class="flex flex-wrap justify-between">
+      <span class="flex-shrink">
+        <span class="text-xl">{{$sum|async|currency:'UAH':'₴':'1.0-0'}}</span>
+        <span class="text-gray-600 mx-1">
+          {{translations.action_block.raised_goal|translate:{"goal": $goal|async|currency:'UAH':'₴':'1.0-0'} }}
+        </span>
       </span>
-      <span class="md:hidden">
-        <span class="text-gray-300 mx-2 text-xl">•</span>
+      <span class="text-gray-300 mx-2 text-xl">•</span>
+      <span class="md:hidden flex-shrink">
         <span class="text-gray-600 mx-1 ">{{($size|async)}} {{translations.action_block.donations|translate}}</span>
       </span>
     </div>

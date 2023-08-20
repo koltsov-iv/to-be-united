@@ -25,6 +25,7 @@ import { ProgressDateComponent } from './pages/fundraising/parts/progress-date/p
 import { ShareDialogComponent } from './pages/fundraising/parts/share-dialog/share-dialog.component';
 import {ClipboardModule} from "ngx-clipboard";
 import { DescriptionComponent } from './pages/fundraising/parts/description/description.component';
+import {UpdatesService} from "./pages/fundraising/services/updates.service";
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { DescriptionComponent } from './pages/fundraising/parts/description/desc
     Translations,
     StatementService,
     FundraisingService,
+    UpdatesService,
   ],
   bootstrap: [AppComponent]
 })

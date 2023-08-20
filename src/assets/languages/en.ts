@@ -19,6 +19,7 @@ const en = {
     title: "Birthday drone for Dnipro-1",
     status_badge: "In progress",
     media_subtitle: "In the photo, I bought a drone for Dnipro-1 last year.",
+    published_at: "Published at {{date}}",
     body_description: `
     <div>
         <p>Just had a conversation with my friends; they are currently stationed at the Limansk front
@@ -75,5 +76,11 @@ const en = {
     copy_link: "Copy link",
     close: "Close",
   },
+  updates: {
+    "1": `<p>At the moment, we need to raise funds for the Mavic-3 drone by the end of summer.
+        We need to buy in Ukraine, the price starts at 90,000 UAH.
+        Most of the funds have already been collected, so let's complete the fundraising together!</p>`
+  },
+  updated_by: `<span class="font-semibold">{{date}}</span> <span class="text-gray-500">by {{name}}</span>`,
 }
 export default en
