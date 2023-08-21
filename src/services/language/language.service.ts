@@ -71,7 +71,7 @@ export class LanguageService implements ILanguageService {
       this.set(lang);
       return this.getLangKey();
     }
-    this.set("en");
+    this.set("ua");
     return this.getLangKey();
   }
 
