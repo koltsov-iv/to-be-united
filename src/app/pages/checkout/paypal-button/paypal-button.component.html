@@ -1,0 +1,11 @@
+<form #form  method="POST" action="https://www.paypal.com/cgi-bin/webscr">
+  <input type="hidden" name="cmd" value="_donations">
+  <input type="hidden" name="amount" [formControl]="amountPaypal">
+  <input type="hidden" name="notify_url" value="https://api.tobeunited.co.uk/web-hook-paypal">
+  <input type="hidden" name="business" value="koltsoviv@gmail.com">
+  <input type="hidden" name="item_name" [formControl]="itemName">
+  <input type="hidden" name="item_number" [formControl]="itemNumber">
+  <input type="hidden" name="currency_code" value="GBP">
+  <input type="hidden" name="return" value="https://tobeunited.co.uk">
+  <input type="hidden" name="tax" value="0">
+</form>

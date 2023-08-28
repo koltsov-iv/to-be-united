@@ -8,4 +8,5 @@ export interface DonationRequest {
   notPublicName: boolean,
   subscription: boolean,
   participation: boolean,
+  paymentMethod: string,
 }

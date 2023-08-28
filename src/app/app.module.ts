@@ -26,6 +26,7 @@ import { ShareDialogComponent } from './pages/fundraising/parts/share-dialog/sha
 import {ClipboardModule} from "ngx-clipboard";
 import { DescriptionComponent } from './pages/fundraising/parts/description/description.component';
 import {UpdatesService} from "./pages/fundraising/services/updates.service";
+import { PaypalButtonComponent } from './pages/checkout/paypal-button/paypal-button.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {UpdatesService} from "./pages/fundraising/services/updates.service";
     ProgressDateComponent,
     ShareDialogComponent,
     DescriptionComponent,
+    PaypalButtonComponent,
   ],
   imports: [
     BrowserModule,

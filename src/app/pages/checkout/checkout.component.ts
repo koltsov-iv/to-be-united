@@ -5,7 +5,7 @@ import {DonationService} from "./services/donation.service";
 import {DonationRequest} from "./services/donation-request";
 import {UserService} from "../../../services/user/user.service";
 import {Router} from "@angular/router";
-import {delay, timeout} from "rxjs";
+import {Subject} from "rxjs";
 
 @Component({
   selector: 'app-checkout',
@@ -26,12 +26,15 @@ export class CheckoutComponent implements OnInit {
   submitted = false;
   public form = new FormGroup(this.controls)
 
+  submittedPaypal$: Subject<boolean> = new Subject<boolean>()
+  donationID$: Subject<string> = new Subject<string>()
+
   constructor(
     public translations: Translations,
     public donationService: DonationService,
     public userService: UserService,
     public router: Router,
-    ) {
+  ) {
   }
 
   ngOnInit(): void {
@@ -41,7 +44,7 @@ export class CheckoutComponent implements OnInit {
         this.controls.firstname.removeValidators(Validators.required)
         this.controls.email.disable()
         this.controls.email.removeValidators(Validators.required)
-      } else  {
+      } else {
         this.controls.firstname.enable()
         this.controls.firstname.addValidators(Validators.required)
         this.controls.email.enable()
@@ -51,7 +54,7 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  onSubmit = () => {
+  onSubmit = (submitter: string) => {
     this.submitted = true;
     if (this.form.invalid) {
       this.form.markAllAsTouched()
@@ -61,10 +64,17 @@ export class CheckoutComponent implements OnInit {
     this.donationService.sendRequest(this.form.value as DonationRequest).subscribe((val) => {
       console.log(val)
       this.userService.StoreID(val.userID)
-      window.location.href = val.donationLink
-      setTimeout(() => {
-        this.router.navigate([""])
-      }, 10*1000)
+      if (submitter === "paypal-button") {
+        this.donationID$.next(val.id)
+        this.submittedPaypal$.next(true)
+        return
+      }
+      if (submitter === "mono-pay-button") {
+        window.location.href = val.donationLink
+        setTimeout(() => {
+          this.router.navigate([""])
+        }, 10 * 1000)
+      }
     })
   }
 }
