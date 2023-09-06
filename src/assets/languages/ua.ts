@@ -18,7 +18,8 @@ const ua: typeof import('./en').default = {
   fundraising_page: {
     title: "На Mavic-3 Дніпру-1",
     published_at: "Опубліковано {{date}}",
-    status_badge: "В процессі",
+    status_badge_open: "В процессі",
+    status_badge_closed: "Закрито",
     media_subtitle: "На фото купив Мавік Дніпрам в тому році.",
     body_description: `<div>
         Провів комунікацію із друзями, вони зараз на Ліманському напрямку, залучені у активні бойові дії.

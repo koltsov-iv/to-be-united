@@ -6,6 +6,8 @@ import {DonationRequest} from "./services/donation-request";
 import {UserService} from "../../../services/user/user.service";
 import {Router} from "@angular/router";
 import {Subject} from "rxjs";
+import {Fundraising, FundraisingStatus} from "../fundraising/services/fundraising";
+import {FundraisingService} from "../fundraising/services/fundraising.service";
 
 @Component({
   selector: 'app-checkout',
@@ -33,6 +35,7 @@ export class CheckoutComponent implements OnInit {
     public translations: Translations,
     public donationService: DonationService,
     public userService: UserService,
+    public fundraisingService: FundraisingService,
     public router: Router,
   ) {
   }
@@ -49,6 +52,11 @@ export class CheckoutComponent implements OnInit {
         this.controls.firstname.addValidators(Validators.required)
         this.controls.email.enable()
         this.controls.email.addValidators(Validators.required)
+      }
+    })
+    this.fundraisingService.findOne().subscribe(value => {
+      if (value.status === FundraisingStatus.CLOSED) {
+        this.router.navigate([""])
       }
     })
   }

@@ -18,7 +18,8 @@ const pr: typeof import('./en').default = {
   fundraising_page: {
     title: "Drone de Aniversário para Dnipro-1",
     published_at: "Publicado em {{date}}",
-    status_badge: "Em andamento",
+    status_badge_open: "Em andamento",
+    status_badge_closed: "Encerrado",
     media_subtitle: "Na foto, estou comprando um drone para Dnipro-1 para o meu aniversário no ano passado.",
     body_description: `
     <div>

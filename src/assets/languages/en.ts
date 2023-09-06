@@ -5,7 +5,7 @@ const en = {
   wish_you: "Message to the heroes",
   wish_you_placeholder: "Thank you defenders!",
   yours: "Yours",
-  yours_placeholder: "Yours ma",
+  yours_placeholder: "Yours friend",
   form_sum_require_err: "Require to put something.",
   form_contact_require_err: "You need to fill this or check Anonymous.",
   form_email_err: "Need to fill an email in the format example@domain.com",
@@ -17,7 +17,8 @@ const en = {
   your_donation: "Your donation:",
   fundraising_page: {
     title: "Birthday drone for Dnipro-1",
-    status_badge: "In progress",
+    status_badge_open: "In progress",
+    status_badge_closed: "Closed",
     media_subtitle: "In the photo, I bought a drone for Dnipro-1 last year.",
     published_at: "Published at {{date}}",
     body_description: `

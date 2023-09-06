@@ -1,0 +1,8 @@
+.overlay-image {
+  position: absolute;
+  top: 2rem;  /* Adjust as needed */
+  left: 2rem;  /* Adjust as needed */
+  width: 70%;  /* Adjust as needed for size of the overlay image */
+  height: auto;  /* Maintain aspect ratio */
+  z-index: 2;  /* Place above the base image */
+}
