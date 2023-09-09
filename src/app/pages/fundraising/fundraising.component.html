@@ -51,17 +51,16 @@
     <app-comments [statement]="$statement"></app-comments>
   </div>
 
-</div>
-
-<!--- Actions block, Right column --->
-<div class="mt-12 hidden md:block">
-  <div class="mx-6 sticky top-12 bottom-12 mt-2">
-    <div class="border shadow-md rounded bg-white px-8 py-6 mt-8">
-      <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
-      <app-progress-date [statement]="$statement" [fundraising]="$fundraising"></app-progress-date>
-      <app-action-buttons *ngIf="($fundraising|async)?.status == 'OPEN'" class="mt-6"></app-action-buttons>
-      <hr class="my-6"/>
-      <app-top-donation-list [statement]="$statement"></app-top-donation-list>
+  <!--- Actions block, Right column --->
+  <div class="mt-12 hidden md:block">
+    <div class="mx-6 sticky top-12 bottom-12 mt-2">
+      <div class="border shadow-md rounded bg-white px-8 py-6 mt-8">
+        <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
+        <app-progress-date [statement]="$statement" [fundraising]="$fundraising"></app-progress-date>
+        <app-action-buttons *ngIf="($fundraising|async)?.status == 'OPEN'" class="mt-6"></app-action-buttons>
+        <hr class="my-6"/>
+        <app-top-donation-list [statement]="$statement"></app-top-donation-list>
+      </div>
     </div>
   </div>
 </div>
