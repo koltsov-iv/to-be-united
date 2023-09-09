@@ -81,7 +81,13 @@ const pr: typeof import('./en').default = {
   updates: {
     "1": `<p>No momento, precisamos arrecadar fundos para o drone Mavic-3 até o final do verão.
         O preço deste drone na Ucrânia começa em 90.000 UAH.
-        A maior parte do dinheiro já foi arrecadada, então vamos concluir esta arrecadação juntos!</p>`
+        A maior parte do dinheiro já foi arrecadada, então vamos concluir esta arrecadação juntos!</p>`,
+    "2": "<p><h3 class=\"font-bold\">Encerramos a coleta!</h3>\n" +
+      "<span class=\"block overflow-y overflow-x-hidden break-words\"> Isso é incrível! Somos super poderosos juntos!</span>\n" +
+      "<span class=\"block overflow-y overflow-x-hidden break-words\"> 95 contribuições de 5 UAH a 15.000 UAH, 24 países, 42 saudações, 2 sistemas de pagamento.</span>\n" +
+      "<span class=\"block overflow-y overflow-x-hidden break-words\"> Muito obrigado pelo apoio, responsabilidade e confiança! Juntos para a vitória!</span>\n" +
+      "<span class=\"block overflow-y overflow-x-hidden break-words\"> E, claro, um grande obrigado dos rapazes do Dnipro-1, que já receberam o drone.</span>\n" +
+      "</p>\n",
   },
   updated_by: `<span class="">{{date}}</span> <span class="text-gray-500">- {{name}}</span>`,
 

@@ -78,7 +78,13 @@ const ua: typeof import('./en').default = {
   updates: {
     "1": `<p>На даний момент нам потрібно зібрати кошти на дрон Mavic-3 до кінця літа.
         Купити треба в Україні, ціна стартує від 90 тис. грн.
-        Більшість коштів вже зібрано, тому давайте закриємо збір разом!</p>`
+        Більшість коштів вже зібрано, тому давайте закриємо збір разом!</p>`,
+    "2": `<p><h3 class="font-bold">Ми закрили збір!</h3>
+<span class="block overflow-y overflow-x-hidden break-words"> Це неймовірно! Ми супер потужні разом!</span>
+<span class="block overflow-y overflow-x-hidden break-words"> 95 внесків від 5 грн до 15.000 грн, 24 країни, 42 привітання, 2 платіжні системи.</span>
+<span class="block overflow-y overflow-x-hidden break-words"> Велике дякую за підтримку, відповідальність і довіру! Разом до перемоги!</span>
+<span class="block overflow-y overflow-x-hidden break-words"> І, звісно ж велике дякую від хлопців з Дніпра-1, які вже отримали дрон.</span>
+</p>`
   },
   updated_by: `<span class="font-semibold">{{date}}</span> <span class="text-gray-500">- {{name}}</span>`,
 }

@@ -1,0 +1,21 @@
+<ng-container *ngIf="$updates|async as updatesData">
+  <div *ngIf="updatesData?.length">
+    <hr class="mt-6 md:mt-8"/>
+    <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-4">{{translations.fundraising_page.updates|translate}} ({{allItems.length}})</h2>
+    <div class="mt-2"></div>
+    <div *ngFor="let update of updatesData" class="mt-4">
+      <span class="text-sm mt-2" [innerHTML]="translations.updated_by|translate: {date: update.date|date:'dd.MM.yyyy', name: 'Ilya Koltsov'}"></span>
+      <div class="mt-2" [innerHTML]="update.text|translate"></div>
+      <div class="flex justify-start space-x-4 mt-4">
+        <div *ngFor="let item of update.media; let i = index" [lightbox]="i">
+          <img [src]="item.data?.thumb"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mt-8 font-bold underline hover:cursor-pointer"
+    *ngIf="$hasMore|async" (click)="showMore()">
+    {{translations.fundraising_page.comments_show|translate}}
+  </div>
+</ng-container>

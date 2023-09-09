@@ -80,7 +80,13 @@ const en = {
   updates: {
     "1": `<p>At the moment, we need to raise funds for the Mavic-3 drone by the end of summer.
         We need to buy in Ukraine, the price starts at 90,000 UAH.
-        Most of the funds have already been collected, so let's complete the fundraising together!</p>`
+        Most of the funds have already been collected, so let's complete the fundraising together!</p>`,
+    "2": `<p><h3 class="font-bold">We have closed this fundraising!</h3>
+<span class="block overflow-y overflow-x-hidden break-words"> This is incredible! We are super powerful together!</span>
+<span class="block overflow-y overflow-x-hidden break-words"> 95 contributions from 5 UAH to 15,000 UAH, 24 countries, 42 greetings, 2 payment systems.</span>
+<span class="block overflow-y overflow-x-hidden break-words"> A big thank you for the support, responsibility, and trust! Together we will win!</span>
+<span class="block overflow-y overflow-x-hidden break-words"> And, of course, a big thank you from the guys from Dnipro-1, who have already received the drone.</span>
+</p>`,
   },
   updated_by: `<span class="font-semibold">{{date}}</span> <span class="text-gray-500">by {{name}}</span>`,
 }

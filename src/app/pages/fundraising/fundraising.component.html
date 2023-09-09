@@ -1,6 +1,6 @@
 <div class="md:hidden">
   <img ngSrc="assets/drone-page/guys-min.jpeg" alt="friends received drone" class="h-64 w-screen object-cover"
-     width="320" height="440" priority/>
+       width="320" height="440" priority/>
   <img src="assets/closed.png" alt="closed sign" class="overlay-image"/>
 </div>
 <div class="flex justify-center px-4 md:px-8 py-2 md:py-4">
@@ -8,14 +8,17 @@
     <div class="flex flex-col">
       <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-8 md:mb-4 order-last md:order-first">
         {{translations.fundraising_page.title|translate}}
-        <span *ngIf="($fundraising|async)?.status == 'OPEN'" class="hidden md:inline align-top bg-green-100 text-green-800 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded dark:bg-green-900 dark:text-green-300">
+        <span *ngIf="($fundraising|async)?.status == 'OPEN'"
+              class="hidden md:inline align-top bg-green-100 text-green-800 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded dark:bg-green-900 dark:text-green-300">
           {{translations.fundraising_page.status_badge_open|translate}}
         </span>
-        <span *ngIf="($fundraising|async)?.status == 'CLOSED'"  class="align-top bg-gray-600 text-gray-100 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded">
+        <span *ngIf="($fundraising|async)?.status == 'CLOSED'"
+              class="align-top bg-gray-600 text-gray-100 text-xs font-medium ml-2 px-2.5 py-0.5 mb-0.5 rounded">
           {{translations.fundraising_page.status_badge_closed|translate}}
         </span>
         <div class="mt-2">
-          <span class="text-sm text-gray-500 font-normal md:hidden">{{ translations.fundraising_page.published_at | translate: {"date": ($fundraising|async)?.dateStart|date:'dd.MM.yyyy'} }}</span>
+          <span
+            class="text-sm text-gray-500 font-normal md:hidden">{{ translations.fundraising_page.published_at | translate: {"date": ($fundraising|async)?.dateStart|date:'dd.MM.yyyy'} }}</span>
         </div>
       </h2>
       <!--- Image block --->
@@ -27,8 +30,10 @@
                class="hidden md:block md:rounded-r" width="320" height="440"/>
         </div>
         <div class="flex justify-between mt-2">
-        <span class="text-sm text-gray-500 hidden md:block">{{translations.fundraising_page.media_subtitle|translate}}</span>
-        <span class="text-sm text-gray-500 font-normal hidden md:block mr-8">{{ translations.fundraising_page.published_at | translate: {"date": ($fundraising|async)?.dateStart|date:'dd.MM.yyyy'} }}</span>
+          <span
+            class="text-sm text-gray-500 hidden md:block">{{translations.fundraising_page.media_subtitle|translate}}</span>
+          <span
+            class="text-sm text-gray-500 font-normal hidden md:block mr-8">{{ translations.fundraising_page.published_at | translate: {"date": ($fundraising|async)?.dateStart|date:'dd.MM.yyyy'} }}</span>
         </div>
       </div>
     </div>
@@ -42,41 +47,21 @@
     </div>
 
     <app-description></app-description>
-
-    <!--- Updates block --->
-    <ng-container *ngIf="$updates|async as updatesData">
-      <div *ngIf="updatesData?.length">
-        <hr class="mt-6 md:mt-8"/>
-        <h2 class="font-bold text-xl md:text-3xl mt-2 md:mt-4">{{translations.fundraising_page.updates|translate}} ({{updatesData.length}})</h2>
-        <div class="mt-2"></div>
-        <div *ngFor="let update of updatesData" class="mt-4">
-          <span class="text-sm mt-2" [innerHTML]="translations.updated_by|translate: {date: update.date|date:'dd.MM.yyyy', name: 'Ilya Koltsov'}"></span>
-          <div class="mt-2" [innerHTML]="update.text|translate"></div>
-        </div>
-      </div>
-    </ng-container>
-
-    <!--- Comments block --->
-    <div class="mb-12">
-      <hr class="mt-6 md:mt-8"/>
-      <h2 class="font-bold text-xl md:text-3xl mt-4">{{translations.fundraising_page.comments|translate}}
-        ({{($statement|async)?.length}})</h2>
-      <p class=" text-gray-500 mt-2">{{translations.fundraising_page.comments_subheader|translate}}</p>
-      <app-comments [statement]="$statement"></app-comments>
-    </div>
-
+    <app-updates [fundraising]="$fundraising"></app-updates>
+    <app-comments [statement]="$statement"></app-comments>
   </div>
 
-  <!--- Actions block, Right column --->
-  <div class="mt-12 hidden md:block">
-    <div class="mx-6 sticky top-12 bottom-12 mt-2">
-      <div class="border shadow-md rounded bg-white px-8 py-6 mt-8">
-        <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
-        <app-progress-date [statement]="$statement" [fundraising]="$fundraising"></app-progress-date>
-        <app-action-buttons *ngIf="($fundraising|async)?.status == 'OPEN'" class="mt-6"></app-action-buttons>
-        <hr class="my-6"/>
-        <app-top-donation-list [statement]="$statement"></app-top-donation-list>
-      </div>
+</div>
+
+<!--- Actions block, Right column --->
+<div class="mt-12 hidden md:block">
+  <div class="mx-6 sticky top-12 bottom-12 mt-2">
+    <div class="border shadow-md rounded bg-white px-8 py-6 mt-8">
+      <app-progress-sum [statement]="$statement" [fundraising]="$fundraising"></app-progress-sum>
+      <app-progress-date [statement]="$statement" [fundraising]="$fundraising"></app-progress-date>
+      <app-action-buttons *ngIf="($fundraising|async)?.status == 'OPEN'" class="mt-6"></app-action-buttons>
+      <hr class="my-6"/>
+      <app-top-donation-list [statement]="$statement"></app-top-donation-list>
     </div>
   </div>
 </div>

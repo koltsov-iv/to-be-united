@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 import {Component, Input, OnInit} from '@angular/core';
-import {BehaviorSubject, Subject} from "rxjs";
+import {BehaviorSubject, map, Subject} from "rxjs";
 import {DonationResponse} from "../../services/donationResponse";
 import {Translations} from "../../../../../services/language/translations.service";
 
@@ -22,7 +22,9 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.$statement.subscribe(val => {
+    this.$statement.pipe(map(result => result.filter(val => {
+      return val.comment != ""
+    }))).subscribe(val => {
       if (val.length > this.SHOW_SIZE) {
         this.$hasMore.next(true)
       }

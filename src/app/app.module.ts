@@ -27,6 +27,10 @@ import {ClipboardModule} from "ngx-clipboard";
 import { DescriptionComponent } from './pages/fundraising/parts/description/description.component';
 import {UpdatesService} from "./pages/fundraising/services/updates.service";
 import { PaypalButtonComponent } from './pages/checkout/paypal-button/paypal-button.component';
+import {GalleryComponent, GalleryModule} from "ng-gallery";
+import {LightboxDirective} from "ng-gallery/lightbox";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { UpdatesComponent } from './pages/fundraising/parts/updates/updates.component';
 
 @NgModule({
   declarations: [
@@ -44,14 +48,17 @@ import { PaypalButtonComponent } from './pages/checkout/paypal-button/paypal-but
     ShareDialogComponent,
     DescriptionComponent,
     PaypalButtonComponent,
+    UpdatesComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgOptimizedImage,
     HttpClientModule,
     ClipboardModule,
+    GalleryModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -60,6 +67,8 @@ import { PaypalButtonComponent } from './pages/checkout/paypal-button/paypal-but
       },
       defaultLanguage: "en",
     }),
+    GalleryComponent,
+    LightboxDirective,
   ],
   providers: [
     LanguageServiceProvider,
